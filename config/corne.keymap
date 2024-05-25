@@ -35,7 +35,7 @@
 
             bindings = <
 &soft_off  &trans  &trans  &trans  &trans  &trans    &trans  &kp N7      &kp N8     &kp N9  &trans  &trans
-&trans     &trans  &trans  &trans  &trans  &trans    &trans  &kp N4      &kp N5     &kp N6  &sl 2   &trans
+&trans     &to 3   &trans  &trans  &trans  &trans    &trans  &kp N4      &kp N5     &kp N6  &sl 2   &trans
 &trans     &trans  &trans  &trans  &trans  &trans    &kp N0  &kp N1      &kp N2     &kp N3  &trans  &trans
                            &trans  &trans  &trans    &kp N0  &kp PERIOD  &kp COMMA
             >;
@@ -53,6 +53,15 @@
 &kp LCTRL  &kp TILDE    &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LESS_THAN    &kp GREATER_THAN  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &trans     &trans
 &kp LSHFT  &kp PERCENT  &kp GRAVE       &kp SQT           &kp SEMICOLON         &kp BACKSLASH    &kp PIPE          &kp COLON              &kp DOUBLE_QUOTES  &trans           &trans     &trans
                                         &to 0             &kp DEL               &trans           &kp MINUS         &kp UNDERSCORE         &kp NUMBER_0
+            >;
+        };
+
+        arrows {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans  &trans
+                        &to 0   &trans  &trans    &trans    &trans    &trans
             >;
         };
     };
