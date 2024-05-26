@@ -1,7 +1,7 @@
 on:
-  - push
-    # paths:
-    #   - "config/corne.keymap"
+  push:
+    paths:
+      - "config/corne.keymap"
 
 jobs:
   draw:
