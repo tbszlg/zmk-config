@@ -2,4 +2,4 @@
 
 ## Corne
 
-[keymap](config/corne.svg)
+![keymap](config/corne.svg)
