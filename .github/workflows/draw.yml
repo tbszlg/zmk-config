@@ -31,7 +31,7 @@ jobs:
         with:
           author_name: Github Actions
           author_email: actions@github.com
-          commiter_name: Github Actions
-          commiter_email: actions@github.com
+          committer_name: Github Actions
+          committer_email: actions@github.com
           message: "Update keymap svg file"
           add: "config/corne.svg"
