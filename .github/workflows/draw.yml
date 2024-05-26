@@ -1,0 +1,37 @@
+on:
+  - push
+    # paths:
+    #   - "config/corne.keymap"
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    name: "Draw keymap"
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4.1.0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install keymap-drawer
+
+      - name: Generate keymap image
+        run: |
+          keymap parse -c 12 -z config/corne.keymap -o parsed_keymap.yaml
+          keymap draw parsed_keymap.yaml -o config/corne.svg
+
+      - name: Commit svg file
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: Github Actions
+          author_email: actions@github.com
+          commiter_name: Github Actions
+          commiter_email: actions@github.com
+          message: "Update keymap svg file"
+          add: "config/corne.svg"
