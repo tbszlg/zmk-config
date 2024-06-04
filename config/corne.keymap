@@ -11,9 +11,9 @@
     combos {
         compatible = "zmk,combos";
 
-        qw-esc {
+        jk-esc {
             bindings = <&kp ESC>;
-            key-positions = <1 2>;
+            key-positions = <19 20>;
         };
 
         soft_off {
