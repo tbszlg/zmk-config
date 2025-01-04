@@ -19,10 +19,13 @@ LV_IMG_DECLARE(crystal_14);
 LV_IMG_DECLARE(crystal_15);
 LV_IMG_DECLARE(crystal_16);
 
+LV_IMG_DECLARE(snake);
+LV_IMG_DECLARE(crab);
+
 const lv_img_dsc_t *anim_imgs[] = {
     &crystal_01, &crystal_02, &crystal_03, &crystal_04, &crystal_05, &crystal_06,
     &crystal_07, &crystal_08, &crystal_09, &crystal_10, &crystal_11, &crystal_12,
-    &crystal_13, &crystal_14, &crystal_15, &crystal_16,
+    &crystal_13, &crystal_14, &crystal_15, &crystal_16, &snake, &crab,
 };
 
 void draw_animation(lv_obj_t *canvas) {
@@ -30,10 +33,14 @@ void draw_animation(lv_obj_t *canvas) {
     lv_obj_t *art = lv_animimg_create(canvas);
     lv_obj_center(art);
 
-    lv_animimg_set_src(art, (const void **)anim_imgs, 16);
-    lv_animimg_set_duration(art, CONFIG_NICE_VIEW_GEM_ANIMATION_MS);
-    lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
-    lv_animimg_start(art);
+    #if IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
+        lv_img_set_src(art, anim_imgs[16]);
+    #else
+        lv_img_set_src(art, anim_imgs[17]);
+    #endif
+    // lv_animimg_set_duration(art, CONFIG_NICE_VIEW_GEM_ANIMATION_MS);
+    // lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
+    // lv_animimg_start(art);
 #else
     lv_obj_t *art = lv_img_create(canvas);
 
