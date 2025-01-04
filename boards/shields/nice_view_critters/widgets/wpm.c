@@ -22,8 +22,8 @@ static void draw_needle(lv_obj_t *canvas, const struct status_state *state) {
     int offset = 13;
     int value = state->wpm[9];
 
-#if IS_ENABLED(CONFIG_NICE_VIEW_GEM_WPM_FIXED_RANGE)
-    float max = CONFIG_NICE_VIEW_GEM_WPM_FIXED_RANGE_MAX;
+#if IS_ENABLED(CONFIG_NICE_VIEW_CRITTERS_WPM_FIXED_RANGE)
+    float max = CONFIG_NICE_VIEW_CRITTERS_WPM_FIXED_RANGE_MAX;
 #else
     float max = 0;
     for (int i = 0; i < 10; i++) {
@@ -66,8 +66,8 @@ static void draw_graph(lv_obj_t *canvas, const struct status_state *state) {
 
     int baselineY = 97 + BUFFER_OFFSET_MIDDLE;
 
-#if IS_ENABLED(CONFIG_NICE_VIEW_GEM_WPM_FIXED_RANGE)
-    int max = CONFIG_NICE_VIEW_GEM_WPM_FIXED_RANGE_MAX;
+#if IS_ENABLED(CONFIG_NICE_VIEW_CRITTERS_WPM_FIXED_RANGE)
+    int max = CONFIG_NICE_VIEW_CRITTERS_WPM_FIXED_RANGE_MAX;
     if (max == 0) {
         max = 100;
     }
