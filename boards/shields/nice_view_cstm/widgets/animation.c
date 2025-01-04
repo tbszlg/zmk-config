@@ -2,30 +2,11 @@
 #include <zephyr/kernel.h>
 #include "animation.h"
 
-LV_IMG_DECLARE(crystal_01);
-LV_IMG_DECLARE(crystal_02);
-LV_IMG_DECLARE(crystal_03);
-LV_IMG_DECLARE(crystal_04);
-LV_IMG_DECLARE(crystal_05);
-LV_IMG_DECLARE(crystal_06);
-LV_IMG_DECLARE(crystal_07);
-LV_IMG_DECLARE(crystal_08);
-LV_IMG_DECLARE(crystal_09);
-LV_IMG_DECLARE(crystal_10);
-LV_IMG_DECLARE(crystal_11);
-LV_IMG_DECLARE(crystal_12);
-LV_IMG_DECLARE(crystal_13);
-LV_IMG_DECLARE(crystal_14);
-LV_IMG_DECLARE(crystal_15);
-LV_IMG_DECLARE(crystal_16);
-
 LV_IMG_DECLARE(snake);
 LV_IMG_DECLARE(crab);
 
 const lv_img_dsc_t *anim_imgs[] = {
-    &crystal_01, &crystal_02, &crystal_03, &crystal_04, &crystal_05, &crystal_06,
-    &crystal_07, &crystal_08, &crystal_09, &crystal_10, &crystal_11, &crystal_12,
-    &crystal_13, &crystal_14, &crystal_15, &crystal_16, &snake, &crab,
+    &snake, &crab,
 };
 
 void draw_animation(lv_obj_t *canvas) {
@@ -34,9 +15,9 @@ void draw_animation(lv_obj_t *canvas) {
     lv_obj_center(art);
 
     #if IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
-        lv_img_set_src(art, anim_imgs[16]);
+        lv_img_set_src(art, anim_imgs[0]);
     #else
-        lv_img_set_src(art, anim_imgs[17]);
+        lv_img_set_src(art, anim_imgs[1]);
     #endif
     // lv_animimg_set_duration(art, CONFIG_NICE_VIEW_GEM_ANIMATION_MS);
     // lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
