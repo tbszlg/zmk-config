@@ -20,7 +20,7 @@
 
         soft_off {
             bindings = <&soft_off>;
-            key-positions = <0 35>;
+            key-positions = <0 11>;
         };
     };
 
