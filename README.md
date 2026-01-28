@@ -31,6 +31,8 @@ cd /zmk
 mkdir -p /workspaces/zmk-config/build
 export FW_FILE=/workspaces/zmk-config/build/corne_left-zmk.uf2
 rm -rf build && west build -s app -d build -b nice_nano_v2 -- -DZMK_CONFIG=$WORKPACE_PATH/config -DSHIELD="corne_left nice_view_adapter nice_view_critters" -DZMK_EXTRA_MODULES="/workspaces/zmk-config/" && cp build/zephyr/zmk.uf2 $FW_FILE
+export FW_FILE=/workspaces/zmk-config/build/corne_right-zmk.uf2
+rm -rf build && west build -s app -d build -b nice_nano_v2 -- -DZMK_CONFIG=$WORKPACE_PATH/config -DSHIELD="corne_right nice_view_adapter nice_view_critters" -DZMK_EXTRA_MODULES="/workspaces/zmk-config/" && cp build/zephyr/zmk.uf2 $FW_FILE
 ```
 
 Then flash from the host machine using `mv build/corne_left-zmk.uf2 /Volumes/NICENANO`

@@ -5,7 +5,7 @@
     "args": {
       // git clone settings
       "ZMK_URL": "https://github.com/zmkfirmware/zmk.git",
-      "ZMK_BRANCH": "main",
+      "ZMK_BRANCH": "v0.3",
       "ZMK_PATH": "/zmk"
     }
   },
